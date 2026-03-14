@@ -1,0 +1,156 @@
+:root {
+  --bg: #050505;
+  --bg-soft: #0d0d0d;
+  --text: #f5f5f5;
+  --muted: #9d9d9d;
+  --line: #434343;
+  --accent: #d7d7d7;
+  --max-width: 46rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 26%),
+    linear-gradient(180deg, #090909 0%, var(--bg) 100%);
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: lowercase;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+p,
+li {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.78;
+}
+
+ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1.2rem;
+}
+
+hr {
+  margin: 1.7rem 0;
+  border: 0;
+  border-top: 2px solid var(--line);
+}
+
+.background-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.07), transparent 24%),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04), transparent 18%);
+}
+
+.page-shell {
+  position: relative;
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+  padding: 2.8rem 0 3rem;
+}
+
+.intro {
+  display: block;
+}
+
+.intro-copy h1,
+.intro-copy p,
+.content-block h2,
+.site-footer p {
+  margin: 0;
+}
+
+.intro-copy h1 {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.handle {
+  display: inline-block;
+  margin-left: 0.4rem;
+  color: #727272;
+}
+
+.tagline {
+  padding-top: 0.45rem;
+  color: #b9b9b9;
+}
+
+.content-block h2 {
+  margin-bottom: 0.95rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.content-block p + p {
+  margin-top: 0.95rem;
+}
+
+.links-line {
+  text-align: center;
+}
+
+.timeline-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-list li + li {
+  margin-top: 0.9rem;
+}
+
+.timeline-date {
+  display: inline-block;
+  min-width: 12.5rem;
+  color: var(--text);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(calc(100% - 1.25rem), var(--max-width));
+    padding-top: 2rem;
+  }
+
+  .timeline-date {
+    display: block;
+    min-width: 0;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
